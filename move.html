@@ -1,0 +1,55 @@
+<!-- -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>te9SoovinChoi</title>
+    <link rel="stylesheet" href="./style2.css" />
+
+    <!--Loading pointer lock example script, as a module script, it will call all the other required sources from the script.-->
+    <!-- <script src="./src/OrbitControls.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js"></script>
+    <script src="./client3.js" type="module"></script>
+
+  </head>
+  <body>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+
+    <script>
+      var scene = new THREE.Scene();
+
+      var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
+
+      var renderer -= new THREE.WebGLRenderer({antiallias: true});
+      </script>
+
+
+
+
+
+
+
+
+    <!--These divs contain the overlay text and are made invisible by functions within the client3.js script.-->
+    <div id="blocker">
+      <div id="instructions">
+        <br />
+        <h1>Art 109 Three.js Pointer Lock Controls</h1>
+        <h2 style="font-size:36px">
+          Click To Play
+        </h2>
+        <p class="move-mid">
+          Move: WASD<br />
+          Jump: SPACE<br />
+          Look: MOUSE
+        </p>
+        <p class="move-mid">
+          <a href="./">Back to main page</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
