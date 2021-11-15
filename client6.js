@@ -50,7 +50,7 @@ function init() {
     1000
   );
   renderer = new THREE.WebGLRenderer();
-  renderer.setClearColor(0xdfdfdf);
+  renderer.setClearColor(0x000000);
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
   // Add scene to gltf.html
@@ -130,18 +130,28 @@ function init() {
   camera.position.z = 17;
 
   // Add a directional light to the scene
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9);
-  scene.add(directionalLight);
+  // const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9);
+  // scene.add(directionalLight);
+  //
+  // // Add an ambient light to the scene
+  // const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+  // scene.add(ambientLight);
 
-  // Add an ambient light to the scene
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
-  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0xffffff)
+  pointLight.position.set(20,20,20)
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
+  scene.add(pointLight, ambientLight)
+
+  const lightHelper = new THREE.PointLightHelper(pointLight)
+  scene.add(lightHelper)
+
 
  // Add Text under models
  const loader3 = new FontLoader();
 				loader3.load( './assets/helvetiker_regular.typeface.json', function ( font ) {
           // Define font color
-					const color = 0x2E5999;
+					const color = 0xffffff;
           // Define font material
 					const matDark = new THREE.LineBasicMaterial( {
 						color: color,
