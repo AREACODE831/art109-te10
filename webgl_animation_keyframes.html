@@ -35,13 +35,13 @@
 
 			import * as THREE from '../build/three.module.js';
 
-			import Stats from './src/stats.module.js';
+			import Stats from '../src/stats.module.js';
 
-			import { OrbitControls } from './src/OrbitControls.js';
-			import { RoomEnvironment } from './src/RoomEnvironment.js';
+			import { OrbitControls } from '../src/OrbitControls.js';
+			import { RoomEnvironment } from '../src/RoomEnvironment.js';
 
-			import { GLTFLoader } from './src/GLTFLoader.js';
-			import { DRACOLoader } from './src/DRACOLoader.js';
+			import { GLTFLoader } from '../src/GLTFLoader.js';
+			import { DRACOLoader } from '../src/DRACOLoader.js';
 
 			let mixer;
 
@@ -73,11 +73,11 @@
 			controls.enableDamping = true;
 
 			const dracoLoader = new DRACOLoader();
-			dracoLoader.setDecoderPath( './src/' );
+			dracoLoader.setDecoderPath( '../src/' );
 
 			const loader = new GLTFLoader();
 			loader.setDRACOLoader( dracoLoader );
-			loader.load( 'assets/catani.glb', function ( gltf ) {
+			loader.load( '../assets/catani.glb', function ( gltf ) {
 
 				const model = gltf.scene;
 				model.position.set( 1, 1, 0 );
