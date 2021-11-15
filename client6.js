@@ -72,7 +72,7 @@ function init() {
       });
       // set position and scale
       mesh = gltf.scene;
-      mesh.position.set(4, 0, 0);
+      mesh.position.set(4, 1, -4);
       mesh.rotation.set(0, 0, 0);
       mesh.scale.set(1, 1, 1);
       // Add model to scene
@@ -97,7 +97,7 @@ function init() {
 
   // Load static model, add material, and add it to the scene
   const loader2 = new GLTFLoader().load(
-    "./assets/bearemission.glb",
+    "./assets/bearalpha.glb",
     function(gltf) {
       // Scan loaded model for mesh and apply defined material if mesh is present
       gltf.scene.traverse(function(child) {
