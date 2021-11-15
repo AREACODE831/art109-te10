@@ -58,12 +58,12 @@ function init() {
 
   // Material to be added to preanimated model
   var newMaterial = new THREE.MeshStandardMaterial({
-    color: 0x2E5939
+    color: 0xABA0F2
   });
 
   // Load preanimated model, add material, and add it to the scene
   const loader = new GLTFLoader().load(
-    "./assets/blend_def_ani.glb",
+    "./assets/catani.glb",
     function(gltf) {
       gltf.scene.traverse(function(child) {
         if (child.isMesh) {
@@ -97,7 +97,7 @@ function init() {
 
   // Load static model, add material, and add it to the scene
   const loader2 = new GLTFLoader().load(
-    "./assets/blend_def.glb",
+    "./assets/bearemission.glb",
     function(gltf) {
       // Scan loaded model for mesh and apply defined material if mesh is present
       gltf.scene.traverse(function(child) {
